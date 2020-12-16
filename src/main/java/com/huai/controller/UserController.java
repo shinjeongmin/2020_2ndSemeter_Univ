@@ -27,17 +27,16 @@ public class UserController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String useridStr = request.getParameter("userid");
+		String useridStr = request.getParameter("id");
 		//test
 		System.out.println("user ID = "+useridStr);
 
-//		User newUser = userDao.getUserByID2(Integer.parseInt(useridStr));
 		User newUser = userDao.getUserByID2(useridStr);
 		System.out.println(newUser);
 
 		request.setAttribute("user", newUser);
-		RequestDispatcher view = request.getRequestDispatcher("showUser.jsp");
-		view.forward(request, response);
+//		RequestDispatcher view = request.getRequestDispatcher("showUser.jsp");
+//		view.forward(request, response);
 
 
 		//response.getWriter().append("Served at: ").append(request.getContextPath());

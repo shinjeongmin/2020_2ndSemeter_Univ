@@ -1,7 +1,6 @@
 package com.huai.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,27 +15,23 @@ import com.huai.model.User;
 /**
  * Servlet implementation class UserController
  */
-@WebServlet("/AllUserController") //
-public class AllUserController extends HttpServlet {
+@WebServlet("/DeleteUserController") //This is very important
+public class DeleteUserController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     UserDao userDao ;
-    public AllUserController() {
+    public DeleteUserController() {
         this.userDao = new UserDao();
     }
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        List<User> newUser = userDao.getAllUsers();
-        System.out.println(newUser);
+        String useridStr = request.getParameter("id");
 
-        request.setAttribute("users", newUser);
-//        RequestDispatcher view = request.getRequestDispatcher("showAllUsers.jsp");
-//        view.forward(request, response);
+        int complete = userDao.deleteUserById(useridStr);
 
-
-        //response.getWriter().append("Served at: ").append(request.getContextPath());
+        request.setAttribute("issuccess", complete);
     }
 
 

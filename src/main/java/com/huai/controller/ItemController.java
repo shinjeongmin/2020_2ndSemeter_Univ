@@ -1,7 +1,6 @@
 package com.huai.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,29 +9,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.huai.dao.UserDao;
-import com.huai.model.User;
+import com.huai.dao.ItemDao;
+import com.huai.model.Item;
 
 /**
- * Servlet implementation class UserController
+ * Servlet implementation class ItemController
  */
-@WebServlet("/AllUserController") //
-public class AllUserController extends HttpServlet {
+@WebServlet("/ItemController") //
+public class ItemController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    UserDao userDao ;
-    public AllUserController() {
-        this.userDao = new UserDao();
+    ItemDao itemDao ;
+    public ItemController() {
+        this.itemDao = new ItemDao();
     }
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        List<User> newUser = userDao.getAllUsers();
-        System.out.println(newUser);
+        String itemnameStr = request.getParameter("name");
 
-        request.setAttribute("users", newUser);
-//        RequestDispatcher view = request.getRequestDispatcher("showAllUsers.jsp");
+        Item newItem = itemDao.getItemByID(itemnameStr);
+
+        request.setAttribute("item", newItem);
+//        RequestDispatcher view = request.getRequestDispatcher("showItem.jsp");
 //        view.forward(request, response);
 
 

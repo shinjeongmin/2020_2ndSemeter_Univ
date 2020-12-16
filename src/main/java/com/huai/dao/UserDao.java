@@ -1,5 +1,6 @@
 package com.huai.dao;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 
@@ -27,8 +28,31 @@ public class UserDao {
 		return user;
 	}
 
+	public User getUserByID3(@Param("User") User user) {
+		User user_ = sqlSession.selectOne("UserMapper.getUserbyId3", user);
+		return user_;
+	}
+
 	public List<User> getAllUsers(){
-		List<User> users = sqlSession.selectList("getAllUsers");
+		List<User> users = sqlSession.selectList("UserMapper.getAllUsers");
 		return users;
+	}
+
+	public int InsertUser(@Param("User") User user){
+		int complete = sqlSession.insert("UserMapper.insertUser", user);
+		sqlSession.commit();
+		return complete;
+	}
+
+	public int updateUserById(@Param("User") User user){
+		int complete = sqlSession.update("UserMapper.updateUserbyId", user);
+		sqlSession.commit();
+		return complete;
+	}
+
+	public int deleteUserById(@Param("Id") String Id){
+		int complete = sqlSession.delete("UserMapper.deleteUserbyId", Id);
+		sqlSession.commit();
+		return complete;
 	}
 }

@@ -10,29 +10,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.huai.dao.UserDao;
-import com.huai.model.User;
+import com.huai.dao.ItemDao;
+import com.huai.model.Item;
 
 /**
- * Servlet implementation class UserController
+ * Servlet implementation class ItemController
  */
-@WebServlet("/AllUserController") //
-public class AllUserController extends HttpServlet {
+@WebServlet("/AllItemController") //
+public class AllItemController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    UserDao userDao ;
-    public AllUserController() {
-        this.userDao = new UserDao();
+    ItemDao itemDao ;
+    public AllItemController() {
+        this.itemDao = new ItemDao();
     }
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        List<User> newUser = userDao.getAllUsers();
-        System.out.println(newUser);
+        List<Item> newItem = itemDao.getAllItems();
 
-        request.setAttribute("users", newUser);
-//        RequestDispatcher view = request.getRequestDispatcher("showAllUsers.jsp");
+        request.setAttribute("items", newItem);
+//        RequestDispatcher view = request.getRequestDispatcher("showItem.jsp");
 //        view.forward(request, response);
 
 

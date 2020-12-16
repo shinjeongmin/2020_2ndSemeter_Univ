@@ -7,7 +7,6 @@
     <title>Insert title here</title>
 </head>
 <body>
-${users}
-<br>
+${item}
 </body>
 </html>

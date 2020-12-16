@@ -7,9 +7,17 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%--JspRuntimeLibrary.URLEncode("?????.",  request.getCharacterEncoding())--%>
 
-<%--<jsp:forward page="UserController?userid=a"></jsp:forward>--%>
-<jsp:forward page="AllUserController"></jsp:forward>
-
+<jsp:include page="AllUserController"></jsp:include>
+${users}
+<br><br>
+a
+<form id="formsubmit" action="test.jsp" method="post">
+    <input style="display: none" type="text" name="id" value="a">
+</form>
+<script>
+    this.document.getElementById("formsubmit").submit();
+</script>
 </body>
 </html>

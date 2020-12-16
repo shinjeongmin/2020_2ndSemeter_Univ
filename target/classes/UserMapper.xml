@@ -4,6 +4,7 @@
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="UserMapper">
+    <!--User Info-->
 
 	<select id="getUserbyId" parameterType="Integer" resultType="com.huai.model.User">
 		SELECT * FROM users where userid = #{userId}
@@ -13,7 +14,37 @@
 		select * from users where id = #{Id}
 	</select>
 
+	<select id="getUserbyId3" parameterType="com.huai.model.User" resultType="com.huai.model.User">
+		select * from users where id = #{id}
+	</select>
+
 	<select id="getAllUsers" resultType="com.huai.model.User">
 		select * from users
+	</select>
+
+	<insert id="insertUser" parameterType="com.huai.model.User">
+		insert into users (id,pwd,name,money,date) values (#{id}, #{pwd}, #{Name}, #{money}, #{date})
+	</insert>
+
+	<update id="updateUserbyId" parameterType="com.huai.model.User">
+		update users
+		set
+		    name = #{Name},
+		    money = #{money}
+		where id = #{id}
+	</update>
+
+	<delete id="deleteUserbyId" parameterType="String">
+		delete from users where id = #{Id}
+	</delete>
+
+    <!--Item Info-->
+
+	<select id="getItembyName" parameterType="String" resultType="com.huai.model.Item">
+		select * from item where name = #{Name}
+	</select>
+
+	<select id="getAllItems" resultType="com.huai.model.Item">
+		select * from item
 	</select>
 </mapper>

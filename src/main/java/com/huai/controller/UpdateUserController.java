@@ -1,7 +1,7 @@
 package com.huai.controller;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,27 +16,32 @@ import com.huai.model.User;
 /**
  * Servlet implementation class UserController
  */
-@WebServlet("/AllUserController") //
-public class AllUserController extends HttpServlet {
+@WebServlet("/UpdateUserController") //This is very important
+public class UpdateUserController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     UserDao userDao ;
-    public AllUserController() {
+    public UpdateUserController() {
         this.userDao = new UserDao();
     }
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        List<User> newUser = userDao.getAllUsers();
-        System.out.println(newUser);
+        User user = new User();
+        user.setId(request.getParameter("id"));
+        user.setPwd(request.getParameter("pwd"));
+        user.setName(request.getParameter("name"));
+        user.setMoney(Integer.parseInt(request.getParameter("money")));
+        Date form = (Date)request.getAttribute("date");
+        user.setDate(form);
 
-        request.setAttribute("users", newUser);
-//        RequestDispatcher view = request.getRequestDispatcher("showAllUsers.jsp");
-//        view.forward(request, response);
+        int complete = userDao.updateUserById(user);
 
+        System.out.println("Insert user : "+user);
+        System.out.println("Insert success? : "+complete);
 
-        //response.getWriter().append("Served at: ").append(request.getContextPath());
+        request.setAttribute("issuccess", complete);
     }
 
 

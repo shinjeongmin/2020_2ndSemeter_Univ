@@ -4489,50 +4489,58 @@ SELECT|sys.sys_config
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1097" parent="364" name="price">
+    <column id="1097" parent="364" name="name">
       <Position>2</Position>
+      <DataType>varchar(45)|0s</DataType>
+    </column>
+    <column id="1098" parent="364" name="category">
+      <Position>3</Position>
+      <DataType>varchar(45)|0s</DataType>
+    </column>
+    <column id="1099" parent="364" name="price">
+      <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="1098" parent="364" name="date">
-      <Position>3</Position>
+    <column id="1100" parent="364" name="date">
+      <Position>5</Position>
       <DataType>date|0s</DataType>
     </column>
-    <key id="1099" parent="364" name="PRIMARY">
+    <key id="1101" parent="364" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>itemid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="1100" parent="365" name="userid">
+    <column id="1102" parent="365" name="userid">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1101" parent="365" name="id">
+    <column id="1103" parent="365" name="id">
       <Position>2</Position>
       <DataType>varchar(45)|0s</DataType>
     </column>
-    <column id="1102" parent="365" name="pwd">
+    <column id="1104" parent="365" name="pwd">
       <Position>3</Position>
       <DataType>varchar(45)|0s</DataType>
     </column>
-    <column id="1103" parent="365" name="name">
+    <column id="1105" parent="365" name="name">
       <Position>4</Position>
       <DataType>varchar(45)|0s</DataType>
     </column>
-    <column id="1104" parent="365" name="money">
+    <column id="1106" parent="365" name="money">
       <Position>5</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="1105" parent="365" name="shop_list">
+    <column id="1107" parent="365" name="shop_list">
       <Position>6</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="1106" parent="365" name="date">
+    <column id="1108" parent="365" name="date">
       <Position>7</Position>
       <DataType>date|0s</DataType>
     </column>
-    <key id="1107" parent="365" name="PRIMARY">
+    <key id="1109" parent="365" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>userid</ColNames>
       <Primary>1</Primary>
