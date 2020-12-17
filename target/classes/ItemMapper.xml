@@ -3,10 +3,31 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="UserMapper">
+<mapper namespace="ItemMapper">
+	<!--Item Info-->
 
-	<select id="getUserbyId" parameterType="Integer" resultType="com.huai.model.User">
-		SELECT * FROM users where id = #{userId}
+	<select id="getItembyName" parameterType="String" resultType="com.huai.model.Item">
+		select * from item where name = #{Name}
 	</select>
+
+	<select id="getAllItems" resultType="com.huai.model.Item">
+		select * from item
+	</select>
+
+	<insert id="insertItem" parameterType="com.huai.model.Item">
+		insert into item (name,category,price) values (#{Name},#{category},#{price})
+	</insert>
+
+	<update id="updateItembyName" parameterType="com.huai.model.Item">
+		update item
+		set
+			category = #{category},
+			price = #{price}
+		where name = #{Name}
+	</update>
+
+	<delete id="deleteItembyName" parameterType="String">
+		delete from item where name = #{Name}
+	</delete>
 
 </mapper>

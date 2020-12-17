@@ -1,23 +1,28 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>메인 페이지</title>
+
 </head>
 <body>
-<%--JspRuntimeLibrary.URLEncode("?????.",  request.getCharacterEncoding())--%>
+<%
+    String id = request.getParameter("id");
+    String pwd = request.getParameter("pwd");
+%>
+<h1>Main Page</h1>
+<jsp:include page="component/HorizNavBar.jsp"/>
 
-<jsp:include page="AllUserController"></jsp:include>
-${users}
-<br><br>
-a
-<form id="formsubmit" action="test.jsp" method="post">
-    <input style="display: none" type="text" name="id" value="a">
-</form>
+<jsp:include page="UserController"/>
 <script>
-    this.document.getElementById("formsubmit").submit();
+
+ var userInfo = "${user}";
+ if(userInfo === ""){
+     document.write("로그인하세요.");
+ }else{
+     document.write("${user.name}" + "님 안녕하세요?");
+ }
 </script>
 </body>
 </html>

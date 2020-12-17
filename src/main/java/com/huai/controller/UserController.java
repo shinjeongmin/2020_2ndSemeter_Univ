@@ -29,17 +29,17 @@ public class UserController extends HttpServlet {
 
 		String useridStr = request.getParameter("id");
 		//test
-		System.out.println("user ID = "+useridStr);
+		System.out.println("ID = "+useridStr);
 
 		User newUser = userDao.getUserByID2(useridStr);
 		System.out.println(newUser);
 
 		request.setAttribute("user", newUser);
-//		RequestDispatcher view = request.getRequestDispatcher("showUser.jsp");
+//		RequestDispatcher view = request.getRequestDispatcher("SignUp.jsp");
 //		view.forward(request, response);
-
-
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+//
+//
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 

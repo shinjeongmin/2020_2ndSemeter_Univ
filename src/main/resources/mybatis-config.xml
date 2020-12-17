@@ -13,6 +13,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
                 <property name="driver" value="com.mysql.jdbc.Driver" />
                 <property name="url"
                     value="jdbc:mysql://localhost:3306/userdb?serverTimezone=UTC" />
+<!--                    value="jdbc:mysql://localhost:3306/userdb?zeroDateTimeBehavior=convertToNull" />-->
                 <property name="username" value="root" />
                 <property name="password" value="1234abc" />
             </dataSource>
@@ -21,6 +22,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
     <mappers>
         <mapper resource="UserMapper.xml"/>
+        <mapper resource="ItemMapper.xml"/>
     </mappers>
 
 

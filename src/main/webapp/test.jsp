@@ -13,7 +13,9 @@
 ${users}
 <br><br>
 선택 유저 정보 <br>
-<jsp:include page="UserController"/>
+<a href="">
+<jsp:include page="UserController?id=eee"></jsp:include>
+</a>
 ${user}
 <br><br>
 아이템 정보
@@ -43,7 +45,7 @@ ${items}
     ID : <input type="text" name="id"> <br>
     PWD : <input type="password" name="pwd"> <br>
     Name : <input type="text" name="name"> <br>
-    money : <input type="int" name="money"> <br>
+    money : <input type="number" name="money"> <br>
     <input type="submit" value="확인"> <br>
 </form>
 
@@ -56,6 +58,30 @@ ${items}
     <input type="submit" value="확인"> <br>
 </form>
 
+<br> <br>
+상품추가
+<form action="test_insert_iteminfo.jsp">
+    Name : <input type="text" name="name"> <br>
+    category : <input type="text" name="category"> <br>
+    price : <input type="number" name="price"> <br>
+    <input type="submit" value="확인"> <br>
+</form>
+<br> <br>
+상품변경
+<form action="test_update_iteminfo.jsp">
+    Name : <input type="text" name="name"> <br>
+    category : <input type="text" name="category"> <br>
+    price : <input type="number" name="price"> <br>
+    <input type="submit" value="확인"> <br>
+</form>
+<br> <br>
+상품삭제
+<form action="test_delete_iteminfo.jsp">
+    Name : <input type="text" name="name"> <br>
+    category : <input type="text" name="category"> <br>
+    price : <input type="number" name="price"> <br>
+    <input type="submit" value="확인"> <br>
+</form>
 <br> <br>
 </body>
 </html>
