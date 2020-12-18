@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.huai.model.User;
 import com.huai.util.DBUtil;
+import org.apache.ibatis.session.SqlSessionFactory;
 
 import java.util.List;
 
@@ -38,7 +39,11 @@ public class UserDao {
 
 	public List<User> getAllUsers(){
 		List<User> users = sqlSession.selectList("UserMapper.getAllUsers");
-		sqlSession.commit();
+		try{
+			sqlSession.commit();
+		}catch (Exception e){
+			sqlSession.rollback();
+		}
 		return users;
 	}
 

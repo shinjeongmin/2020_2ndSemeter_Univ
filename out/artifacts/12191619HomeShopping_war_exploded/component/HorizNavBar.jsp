@@ -11,10 +11,12 @@
         }
         li {
             float: left;
+            border-right: solid 3px #ffb541;
         }
+        li:last-child{border-right: none;}
         li a {
             display: block;
-            background-color: orange;
+            background-color: #ffa500;
             color: white;
             padding: 8px;
             text-decoration: none;

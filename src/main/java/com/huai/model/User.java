@@ -1,5 +1,6 @@
 package com.huai.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class User {
@@ -50,6 +51,11 @@ public class User {
 	}
 	public Date getDate() {
 		return date;
+	}
+	public String getDateToCalendar(){
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		String dateToCalen = df.format(date);
+		return dateToCalen;
 	}
 	public void setDate(Date date) {
 		this.date = date;
