@@ -15,7 +15,7 @@
         Name : <input type="text" name="name" value="${user.name}"> <br>
         money : <input type="int" name="money" value="${user.money}"> <br>
         <input type="submit" value="수정완료">
-        <input type="button" value="취소" onclick="location.href = 'Management.jsp'">
+        <input type="button" value="취소" onclick="location.href = 'UserManagement.jsp'">
         <input style="visibility: hidden" type="text" name="id" value="${user.id}">
     </form>
 </body>

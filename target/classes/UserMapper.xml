@@ -38,5 +38,7 @@
 		delete from users where id = #{Id}
 	</delete>
 
-
+	<select id="getListbyId" parameterType="String" resultType="com.huai.model.User">
+		select * from userpurchase
+	</select>
 </mapper>

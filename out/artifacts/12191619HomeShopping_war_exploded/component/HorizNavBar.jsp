@@ -44,8 +44,12 @@
             document.getElementById("frm").action = "../ShopList.jsp";
             document.getElementById("frm").submit();
         }
-        function GotoManagepage(){
-            document.getElementById("frm").action = "../Management.jsp";
+        function GotoUserManagepage(){
+            document.getElementById("frm").action = "../UserManagement.jsp";
+            document.getElementById("frm").submit();
+        }
+        function GotoItemManagepage(){
+            document.getElementById("frm").action = "../ItemManagement.jsp";
             document.getElementById("frm").submit();
         }
     </script>
@@ -59,7 +63,8 @@
     <li><a onclick="GotoShoppage()">Shopping</a></li>
     <li><a onclick="GotoSignInpage()">SignIn</a></li>
     <li><a onclick="GotoSignUppage()">SignUp</a></li>
-    <li><a onclick="GotoManagepage()">User Management</a></li>
+    <li><a onclick="GotoUserManagepage()">User Management</a></li>
+    <li><a onclick="GotoItemManagepage()">Item Management</a></li>
 </ul>
 <form id="frm" action="../index.jsp" method="post" style="visibility: hidden">
     <input type="text" name="id" value="<%=id%>">

@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="ItemMapper">
 	<!--Item Info-->
 
-	<select id="getItembyName" parameterType="String" resultType="com.huai.model.Item">
+	<select id="getItembyName" parameterType="com.huai.model.Item" resultType="com.huai.model.Item">
 		select * from item where name = #{Name}
 	</select>
 

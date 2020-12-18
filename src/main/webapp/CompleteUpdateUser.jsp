@@ -18,7 +18,7 @@
 <jsp:include page="UpdateUserController"/>
 <script>
     alert("수정이 완료되었습니다.");
-    location.href = "Management.jsp";
+    location.href = "UserManagement.jsp";
 </script>
 </body>
 </html>

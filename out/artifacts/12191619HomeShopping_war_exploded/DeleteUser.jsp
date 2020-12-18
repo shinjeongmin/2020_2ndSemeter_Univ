@@ -14,7 +14,7 @@
         document.getElementById("frm").action = "CompleteDeleteUser.jsp";
         document.getElementById("frm").submit();
     }else{
-        location.href = "Management.jsp";
+        location.href = "UserManagement.jsp";
     }
 </script>
 </body>

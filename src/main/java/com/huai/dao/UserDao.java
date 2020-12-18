@@ -1,5 +1,6 @@
 package com.huai.dao;
 
+import com.huai.model.Item;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
@@ -63,5 +64,12 @@ public class UserDao {
 		int complete = sqlSession.delete("UserMapper.deleteUserbyId", Id);
 		sqlSession.commit();
 		return complete;
+	}
+
+	public List<Item> getListById(@Param("Id") String Id){
+		System.out.println("sqlSession " + sqlSession.selectList("UserMapper.getListbyId", Id));
+		List<Item> purchaseitemList = sqlSession.selectList("UserMapper.getListbyId", Id);
+		sqlSession.commit();
+		return purchaseitemList;
 	}
 }

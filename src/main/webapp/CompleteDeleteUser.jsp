@@ -7,7 +7,7 @@
 <jsp:include page="DeleteUserController"/>
 <script>
     alert("삭제를 완료하였습니다.");
-    location.href = "Management.jsp";
+    location.href = "UserManagement.jsp";
 </script>
 </body>
 </html>
