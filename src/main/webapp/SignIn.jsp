@@ -4,6 +4,11 @@
 <html>
 <head>
     <title>로그인 페이지</title>
+    <style>
+        .SignIn{
+            background-color: #ffc800;
+        }
+    </style>
 </head>
 <script>
 
@@ -16,7 +21,8 @@
 <form id="form_signin" action="CompleteSignIn.jsp" method="post">
     ID : <input id="ID" type="text" name="id"> <br>
     PWD : <input type="password" name="pwd"> <br>
-    <input type="submit" value="확인">
+    <br>
+    <input class="btn btn-info btn-lg" type="submit" value="확인">
 </form>
 </body>
 </html>

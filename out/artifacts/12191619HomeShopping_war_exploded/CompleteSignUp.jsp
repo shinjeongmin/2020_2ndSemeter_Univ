@@ -21,7 +21,8 @@
 <div>환영합니다! <%=id%> 님!</div>
 <form action="SignIn.jsp" method="post">
     <input style="visibility: hidden" type="text" name="id" value="<%=id%>"> <br>
-    <input type="submit"
+    <input  class="btn btn-info btn-lg"
+            type="submit"
            style="font-weight: bold;
            text-decoration: none;
            color: black"

@@ -4,6 +4,11 @@
 <html>
 <head>
     <title>회원가입 페이지</title>
+    <style>
+        .SignUp{
+            background-color: #ffc800;
+        }
+    </style>
     <script>
         var IDoverlap = true;
         function SignIn(){
@@ -35,15 +40,15 @@
     </script>
 </head>
 <body>
-<h1>회원가입하기</h1>
+<h1>회원가입</h1>
 <jsp:include page="component/HorizNavBar.jsp"/>
 <form id="form_signin" action="CompleteSignUp.jsp" method="post">
     ID : <input id="ID" type="text" name="id">
-    <input id="checkbutton" type="button" value="중복확인" onclick="CheckIdOverlap()"> <br>
+    <input class="btn btn-info btn-lg" id="checkbutton" type="button" value="중복확인" onclick="CheckIdOverlap()"> <br>
     PWD : <input type="password" name="pwd"> <br>
     Name : <input type="text" name="name"> <br>
     money : <input type="int" name="money"> <br>
-    <input type="button" value="가입하기" onclick="SignIn()">
+    <input class="btn btn-info btn-lg" type="button" value="가입하기" onclick="SignIn()">
 </form>
 </body>
 </html>

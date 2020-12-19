@@ -20,10 +20,13 @@
             color: #197c2e;
             font-weight: bold;
         }
+        .ItemManage{
+            background-color: #ffc800;
+        }
     </style>
 </head>
 <body>
-<h1>Item Management</h1>
+<h1>상품 관리</h1>
 <jsp:include page="component/HorizNavBar.jsp"/>
 <jsp:include page="AllItemController"/>
 <br>
@@ -32,17 +35,22 @@
     int itemNum = item.size();
     for(int i=0; i < itemNum; i++){
 %>
-<a class="ItemInfo">
-    Item<%=i+1%> <br>
-    <a class="ItemInfoSub"> Name : </a> <%=item.get(i).getName()%>
-    <a class="ItemInfoSub"> Price : </a><%=item.get(i).getPrice()%>
-    <a class="ItemInfoSub"> Category : </a><%=item.get(i).getCategory()%> <br> <br>
-    <form>
-        <input formaction="UpdateItem.jsp" type="submit" value="수정" formmethod="post">
-        <input formaction="DeleteItem.jsp" type="submit" value="삭제" formmethod="post">
-        <input type="text" name="name" value="<%=item.get(i).getName()%>" style="visibility: hidden">
-    </form>
-</a>
+<p>
+    <div class="ManagementUnit">
+        <p class="ItemInfo text-success ManagementTitle">Item<%=i+1%></p>
+        <a class="ManagementInfo">
+            <a class="ItemInfoSub"> Name : </a> <%=item.get(i).getName()%>
+            <a class="ItemInfoSub"> Price : </a><%=item.get(i).getPrice()%>
+            <a class="ItemInfoSub"> Category : </a><%=item.get(i).getCategory()%>
+            <a style="padding-right: 70%"></a>
+        </a>
+        <form class="ManagementBtnMdf">
+            <input class="btn btn-info btn-lg ManagementBtnMdf" style="margin-right: .5%;" formaction="UpdateItem.jsp" type="submit" value="수정" formmethod="post">
+            <input class="btn btn-info btn-lg ManagementBtnMdf" style="margin-right: 0%" formaction="DeleteItem.jsp" type="submit" value="삭제" formmethod="post">
+            <input type="text" name="name" value="<%=item.get(i).getName()%>" style="visibility: hidden">
+        </form>
+    </div>
+</p>
 <%
     }
 %>

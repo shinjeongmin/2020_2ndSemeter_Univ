@@ -7,7 +7,11 @@
 <html>
 <head>
 <title>메인 페이지</title>
-
+    <style>
+        .Home{
+            background-color: #ffc800;
+        }
+    </style>
 </head>
 <body>
 <%
@@ -15,7 +19,7 @@
     String pwd = request.getParameter("pwd");
     boolean islogin = false;
 %>
-<h1>Main Page</h1>
+<h1>메인 페이지</h1>
 <jsp:include page="component/HorizNavBar.jsp"/>
 
 <jsp:include page="UserController"/>
