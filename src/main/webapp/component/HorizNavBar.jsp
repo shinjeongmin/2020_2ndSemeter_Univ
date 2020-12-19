@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
     <style>
         ul {
             list-style-type : none;

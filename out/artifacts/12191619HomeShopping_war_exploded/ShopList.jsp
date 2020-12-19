@@ -3,6 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String id = request.getParameter("id");
+    System.out.println("구매 페이지");
 %>
 <html>
 <head>
@@ -13,11 +14,12 @@
 <jsp:include page="component/HorizNavBar.jsp"/>
 <jsp:include page="AllItemController"/>
 <%
-    if(id == null){
+    if(id == null || id == "" || id.equals("null")){
 
 %>
 <script>
-    alert("로그인하세요.");
+    alert("로그인 후 이용할 수 있습니다.");
+    history.back();
 </script>
 <%
     }
@@ -33,7 +35,8 @@ Item<%=i+1%> <br>
 <a class="ItemInfoSub"> Category : </a><%=item.get(i).getCategory()%> <br> <br>
 <form>
     <input formaction="PurchaseItem.jsp" type="submit" value="구매하기" formmethod="post">
-    <input type="text" name="itemid" value="<%=item.get(i).getItemId()%>" style="visibility: hidden">
+    <input type="text" name="itemname" value="<%=item.get(i).getName()%>" style="visibility: hidden">
+    <input type="text" name="userid" value="<%=id%>" style="visibility: hidden">
 </form>
 <%
     }

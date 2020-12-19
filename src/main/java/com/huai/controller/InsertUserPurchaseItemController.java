@@ -1,7 +1,11 @@
 package com.huai.controller;
 
 import java.io.IOException;
-import java.util.List;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,33 +15,33 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.huai.dao.UserDao;
-import com.huai.model.Item;
 import com.huai.model.User;
 import com.huai.model.UserPurchase;
 
 /**
- * Servlet implementation class UserController
+ * Servlet implementation class InsertUserController
  */
-@WebServlet("/UserPurchaseItemController") //This is very important
-public class UserPurchaseItemController extends HttpServlet {
+@WebServlet("/InsertUserPurchaseItemController") //This is very important
+public class InsertUserPurchaseItemController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     UserDao userDao ;
-    public UserPurchaseItemController() {
+    public InsertUserPurchaseItemController() {
         this.userDao = new UserDao();
     }
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String useridStr = request.getParameter("id");
-        System.out.println("Purchase User ID = "+useridStr);
+        UserPurchase userPurchase = new UserPurchase();
+        userPurchase.setUserid(request.getParameter("userid"));
+        userPurchase.setItemname(request.getParameter("itemname"));
 
-        List<UserPurchase> userPurchases = userDao.getListById(useridStr);
-//        int itemList = userDao.delete(useridStr);
-        System.out.println("UserPurchases : " + userPurchases);
+        int complete = userDao.insertListByItemId(userPurchase);
 
-        request.setAttribute("userPurchases", userPurchases);
+        System.out.println("Insert success? : "+complete);
+
+        request.setAttribute("issuccess", complete);
     }
 
 

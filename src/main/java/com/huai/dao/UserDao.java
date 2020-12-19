@@ -1,6 +1,7 @@
 package com.huai.dao;
 
 import com.huai.model.Item;
+import com.huai.model.UserPurchase;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
@@ -66,10 +67,15 @@ public class UserDao {
 		return complete;
 	}
 
-	public List<Item> getListById(@Param("Id") String Id){
-		System.out.println("sqlSession " + sqlSession.selectList("UserMapper.getListbyId", Id));
-		List<Item> purchaseitemList = sqlSession.selectList("UserMapper.getListbyId", Id);
+	public List<UserPurchase> getListById(@Param("Id") String Id){
+		List<UserPurchase> purchaseitemList = sqlSession.selectList("UserMapper.getListbyId", Id);
 		sqlSession.commit();
 		return purchaseitemList;
+	}
+
+	public int insertListByItemId(@Param("UserPurchase") UserPurchase userPurchase){
+		int complete = sqlSession.insert("UserMapper.insertListItemId", userPurchase);
+		sqlSession.commit();
+		return complete;
 	}
 }

@@ -38,7 +38,12 @@
 		delete from users where id = #{Id}
 	</delete>
 
-	<select id="getListbyId" parameterType="String" resultType="com.huai.model.User">
-		select * from userpurchase
+	<select id="getListbyId" parameterType="String" resultType="com.huai.model.UserPurchase">
+		select * from userpurchase where userid = #{Id}
 	</select>
+
+	<insert id="insertListItemId" parameterType="com.huai.model.UserPurchase" >
+		insert into userpurchase (userid,itemname)
+		values (#{userid}, #{itemname})
+	</insert>
 </mapper>
