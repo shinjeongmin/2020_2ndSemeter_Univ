@@ -42,12 +42,13 @@
 <body>
 <h1>회원가입</h1>
 <jsp:include page="component/HorizNavBar.jsp"/>
-<form id="form_signin" action="CompleteSignUp.jsp" method="post">
-    ID : <input id="ID" type="text" name="id">
-    <input class="btn btn-info btn-lg" id="checkbutton" type="button" value="중복확인" onclick="CheckIdOverlap()"> <br>
-    PWD : <input type="password" name="pwd"> <br>
-    Name : <input type="text" name="name"> <br>
-    money : <input type="int" name="money"> <br>
+<form class="form-inline" id="form_signin" action="CompleteSignUp.jsp" method="post">
+    <a style="margin-left: 100px; color: black; text-decoration: none">ID : </a>
+    <input class="form-control" style="margin-bottom: 10px" id="ID" type="text" name="id">
+    <input class="btn btn-info btn-lg" style="margin-bottom: 10px" id="checkbutton" type="button" value="중복확인" onclick="CheckIdOverlap()"> <br>
+    PWD : <input class="form-control" style="margin-bottom: 10px" type="text" name="pwd"> <br>
+    Name : <input class="form-control" style="margin-bottom: 10px" type="text" name="name"> <br>
+    money : <input class="form-control" style="margin-bottom: 10px" type="int" name="money"> <br>
     <input class="btn btn-info btn-lg" type="button" value="가입하기" onclick="SignIn()">
 </form>
 </body>

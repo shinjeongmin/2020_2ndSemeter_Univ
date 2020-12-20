@@ -18,9 +18,9 @@
 
 <jsp:include page="component/HorizNavBar.jsp"/>
 
-<form id="form_signin" action="CompleteSignIn.jsp" method="post">
-    ID : <input id="ID" type="text" name="id"> <br>
-    PWD : <input type="password" name="pwd"> <br>
+<form class="form-inline" id="form_signin" action="CompleteSignIn.jsp" method="post">
+    ID : <input class="form-control" style="margin-bottom: 10px" id="ID" type="text" name="id"> <br>
+    PWD : <input class="form-control" style="margin-right: 22px" type="text" name="pwd"> <br>
     <br>
     <input class="btn btn-info btn-lg" type="submit" value="확인">
 </form>

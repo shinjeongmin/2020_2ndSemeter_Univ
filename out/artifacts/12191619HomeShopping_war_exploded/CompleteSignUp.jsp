@@ -21,11 +21,10 @@
 <div>환영합니다! <%=id%> 님!</div>
 <form action="SignIn.jsp" method="post">
     <input style="visibility: hidden" type="text" name="id" value="<%=id%>"> <br>
-    <input  class="btn btn-info btn-lg"
+    <input  class="btn btn-info btn-lg "
             type="submit"
            style="font-weight: bold;
-           text-decoration: none;
-           color: black"
+           text-decoration: none;"
            value="로그인 하기"
     >
 </form>

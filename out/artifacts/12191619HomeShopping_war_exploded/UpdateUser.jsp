@@ -8,15 +8,16 @@
     <%
         String id = request.getParameter("id");
     %>
+    <jsp:include page="/component/HorizNavBar.jsp"/>
     <jsp:include page="UserController"/>
-    <form id="form_signin" action="CompleteUpdateUser.jsp" method="post">
-        ID : ${user.id} <br>
-        PWD : <input type="password" name="pwd" value="${user.pwd}"> <br>
-        Name : <input type="text" name="name" value="${user.name}"> <br>
-        money : <input type="int" name="money" value="${user.money}"> <br>
-        <input type="submit" value="수정완료">
-        <input type="button" value="취소" onclick="location.href = 'UserManagement.jsp'">
+    <form class="form-inline" id="form_signin" style="font-size: 30px" action="CompleteUpdateUser.jsp" method="post">
+        <div>ID : ${user.id}</div>
+        PWD : <input class="form-control" style="font-size: 20px" type="text" name="pwd" value="${user.pwd}"> <br>
+        Name : <input class="form-control" style="font-size: 20px" type="text" name="name" value="${user.name}"> <br>
+        money : <input class="form-control" style="font-size: 20px" type="int" name="money" value="${user.money}"> <br>
         <input style="visibility: hidden" type="text" name="id" value="${user.id}">
+        <input class="btn btn-info btn-lg" type="submit" value="수정완료">
+        <input class="btn btn-info btn-lg" type="button" value="취소" onclick="location.href = 'UserManagement.jsp'">
     </form>
 </body>
 </html>

@@ -11,6 +11,22 @@
         .Home{
             background-color: #ffc800;
         }
+        #logincheck{
+            font-size: 50px;
+            margin-right: 60%;
+            color: #197c2e;
+        }
+        #logincheck:hover{
+            text-decoration: none;
+        }
+        #Welcome{
+            font-size: 40px;
+            margin-right: 55%;
+            color: #197c2e;
+        }
+        #Welcome{
+            text-decoration: none   ;
+        }
     </style>
 </head>
 <body>
@@ -63,8 +79,15 @@
         int itemNum = item.size();
         for(int i=0; i < itemNum; i++){
     %>
-    구매목록 <%=i+1%> <br>
-    <a class="ItemInfoSub"> Name : </a> <%=item.get(i).getItemname()%> <br> <br>
+    <p>
+        <div class="ManagementUnit">
+            <p class="InfoSub ManagementTitle" style="font-size: 30px">구매목록 <%=i+1%></p>
+            <a class="ManagementInfo">
+                <a class="InfoSub" > Name : </a> <%=item.get(i).getItemname()%>
+            </a>
+            <a style="padding-right: 70%"></a>
+        </div>
+    </p>
     <%
         }
         }%>

@@ -13,10 +13,9 @@
     <div>구매가 완료되었습니다.</div>
     <form action="ShopList.jsp" method="post">
         <input style="visibility: hidden" type="text" name="id" value="<%=id%>"> <br>
-        <input type="submit"
+        <input class="btn btn-info btn-lg" type="submit"
                style="font-weight: bold;
-           text-decoration: none;
-           color: black"
+           text-decoration: none;"
                value="돌아가기"
         >
     </form>
